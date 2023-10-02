@@ -1,0 +1,114 @@
+{
+    "MY": {"name":"Malaysia","phone":60,"symbol":"RM","currency":"MYR","alpha_3":"MYS"},
+    "SG": {"name":"Singapore","phone":65,"symbol":"$","currency":"SGD","alpha_3":"SGP"},
+    "BN": {"name":"Brunei Darussalam","phone":673,"symbol":"B$","currency":"BND","alpha_3":"BRN"},
+    "CN": {"name":"China","phone":86,"symbol":"¥","currency":"CNY","alpha_3":"CHN"},
+    "AU": {"name":"Australia","phone":61,"symbol":"$","currency":"AUD","alpha_3":"AUS"},
+    "TW": {"name":"Taiwan, Province of China","phone":886,"symbol":"$","currency":"TWD","alpha_3":"TWN"},
+    "HK": {"name":"Hong Kong","phone":852,"symbol":"$","currency":"HKD","alpha_3":"HKG"},
+    "US": {"name":"United States","phone":1,"symbol":"$","currency":"USD","alpha_3":"USA"},
+    "ID": {"name":"Indonesia","phone":62,"symbol":"Rp","currency":"IDR","alpha_3":"IDN"},
+    "JP": {"name":"Japan","phone":81,"symbol":"¥","currency":"JPY","alpha_3":"JPN"},
+    "TH": {"name":"Thailand","phone":66,"symbol":"฿","currency":"THB","alpha_3":"THA"},
+  
+  
+  
+    "AF": {"name":"Afghanistan","phone":93,"symbol":"؋","currency":"AFN","alpha_3":"AFG"},
+    
+    "AR": {"name":"Argentina","phone":54,"symbol":"$","currency":"ARS","alpha_3":"ARG"},
+  
+    "AT": {"name":"Austria","phone":43,"symbol":"€","currency":"EUR","alpha_3":"AUT"},
+  
+    "BD": {"name":"Bangladesh","phone":880,"symbol":"৳","currency":"BDT","alpha_3":"BGD"},
+   
+    "BE": {"name":"Belgium","phone":32,"symbol":"€","currency":"EUR","alpha_3":"BEL"},
+    "BZ": {"name":"Belize","phone":501,"symbol":"$","currency":"BZD","alpha_3":"BLZ"},
+   
+    "BR": {"name":"Brazil","phone":55,"symbol":"R$","currency":"BRL","alpha_3":"BRA"},
+    "IO": {"name":"British Indian Ocean Territory","phone":246,"symbol":"$","currency":"USD","alpha_3":"IOT"},
+  
+  
+    "KH": {"name":"Cambodia","phone":855,"symbol":"KHR","currency":"KHR","alpha_3":"KHM"},
+  
+    "CA": {"name":"Canada","phone":1,"symbol":"$","currency":"CAD","alpha_3":"CAN"},
+    
+    "CO": {"name":"Colombia","phone":57,"symbol":"$","currency":"COP","alpha_3":"COL"},
+  
+    "HR": {"name":"Croatia","phone":385,"symbol":"kn","currency":"HRK","alpha_3":"HRV"},
+    "CU": {"name":"Cuba","phone":53,"symbol":"$","currency":"CUP","alpha_3":"CUB"},
+  
+    "DK": {"name":"Denmark","phone":45,"symbol":"Kr.","currency":"DKK","alpha_3":"DNK"},
+  
+    "EG": {"name":"Egypt","phone":20,"symbol":"ج.م","currency":"EGP","alpha_3":"EGY"},
+  
+    "FJ": {"name":"Fiji","phone":679,"symbol":"FJ$","currency":"FJD","alpha_3":"FJI"},
+    "FI": {"name":"Finland","phone":358,"symbol":"€","currency":"EUR","alpha_3":"FIN"},
+    "FR": {"name":"France","phone":33,"symbol":"€","currency":"EUR","alpha_3":"FRA"},
+  
+    "GE": {"name":"Georgia","phone":995,"symbol":"ლ","currency":"GEL","alpha_3":"GEO"},
+    "DE": {"name":"Germany","phone":49,"symbol":"€","currency":"EUR","alpha_3":"DEU"},
+  
+    "GR": {"name":"Greece","phone":30,"symbol":"€","currency":"EUR","alpha_3":"GRC"},
+    "GL": {"name":"Greenland","phone":299,"symbol":"Kr.","currency":"DKK","alpha_3":"GRL"},
+  
+    "IS": {"name":"Iceland","phone":354,"symbol":"kr","currency":"ISK","alpha_3":"ISL"},
+    "IN": {"name":"India","phone":91,"symbol":"₹","currency":"INR","alpha_3":"IND"},
+  
+  
+    "IQ": {"name":"Iraq","phone":964,"symbol":"د.ع","currency":"IQD","alpha_3":"IRQ"},
+    "IE": {"name":"Ireland","phone":353,"symbol":"€","currency":"EUR","alpha_3":"IRL"},
+  
+    "IL": {"name":"Israel","phone":972,"symbol":"₪","currency":"ILS","alpha_3":"ISR"},
+    "IT": {"name":"Italy","phone":39,"symbol":"€","currency":"EUR","alpha_3":"ITA"},
+    "JM": {"name":"Jamaica","phone":1876,"symbol":"J$","currency":"JMD","alpha_3":"JAM"},
+  
+    "JE": {"name":"Jersey","phone":44,"symbol":"£","currency":"GBP","alpha_3":"JEY"},
+  
+    "KR": {"name":"Korea","phone":82,"symbol":"₩","currency":"KRW","alpha_3":"KOR"},
+  
+    "MO": {"name":"Macao","phone":853,"symbol":"$","currency":"MOP","alpha_3":"MAC"},
+  
+    "MW": {"name":"Malawi","phone":265,"symbol":"MK","currency":"MWK","alpha_3":"MWI"},
+  
+    "MV": {"name":"Maldives","phone":960,"symbol":"Rf","currency":"MVR","alpha_3":"MDV"},
+  
+    "MX": {"name":"Mexico","phone":52,"symbol":"$","currency":"MXN","alpha_3":"MEX"},
+  
+    "MC": {"name":"Monaco","phone":377,"symbol":"€","currency":"EUR","alpha_3":"MCO"},
+  
+  
+    "MA": {"name":"Morocco","phone":212,"symbol":"DH","currency":"MAD","alpha_3":"MAR"},
+  
+    "MM": {"name":"Myanmar","phone":95,"symbol":"K","currency":"MMK","alpha_3":"MMR"},
+  
+    "NP": {"name":"Nepal","phone":977,"symbol":"₨","currency":"NPR","alpha_3":"NPL"},
+    "NL": {"name":"Netherlands","phone":31,"symbol":"€","currency":"EUR","alpha_3":"NLD"},
+  
+    "NZ": {"name":"New Zealand","phone":64,"symbol":"$","currency":"NZD","alpha_3":"NZL"},
+  
+    "NG": {"name":"Nigeria","phone":234,"symbol":"₦","currency":"NGN","alpha_3":"NGA"},
+  
+    "NO": {"name":"Norway","phone":47,"symbol":"kr","currency":"NOK","alpha_3":"NOR"},
+  
+    "PK": {"name":"Pakistan","phone":92,"symbol":"₨","currency":"PKR","alpha_3":"PAK"},
+    "PE": {"name":"Peru","phone":51,"symbol":"S/.","currency":"PEN","alpha_3":"PER"},
+    "PH": {"name":"Philippines","phone":63,"symbol":"₱","currency":"PHP","alpha_3":"PHL"},
+  
+    "PL": {"name":"Poland","phone":48,"symbol":"zł","currency":"PLN","alpha_3":"POL"},
+    "PT": {"name":"Portugal","phone":351,"symbol":"€","currency":"EUR","alpha_3":"PRT"},
+  
+    "QA": {"name":"Qatar","phone":974,"symbol":"ق.ر","currency":"QAR","alpha_3":"QAT"},
+  
+    "RU": {"name":"Russian Federation","phone":7,"symbol":"₽","currency":"RUB","alpha_3":"RUS"},
+    "RS": {"name":"Serbia","phone":381,"symbol":"din","currency":"RSD","alpha_3":"SRB"},
+    "ZA": {"name":"South Africa","phone":27,"symbol":"R","currency":"ZAR","alpha_3":"ZAF"},
+    "ES": {"name":"Spain","phone":34,"symbol":"€","currency":"EUR","alpha_3":"ESP"},
+    "LK": {"name":"Sri Lanka","phone":94,"symbol":"Rs","currency":"LKR","alpha_3":"LKA"},
+    "SZ": {"name":"Swaziland","phone":268,"symbol":"E","currency":"SZL","alpha_3":"SWZ"},
+    "SE": {"name":"Sweden","phone":46,"symbol":"kr","currency":"SEK","alpha_3":"SWE"},
+    "CH": {"name":"Switzerland","phone":41,"symbol":"CHf","currency":"CHF","alpha_3":"CHE"},
+    "TR": {"name":"Turkey","phone":90,"symbol":"₺","currency":"TRY","alpha_3":"TUR"},
+    "UA": {"name":"Ukraine","phone":380,"symbol":"₴","currency":"UAH","alpha_3":"UKR"},
+    "GB": {"name":"United Kingdom","phone":44,"symbol":"£","currency":"GBP","alpha_3":"GBR"}
+    
+  }
