@@ -16,7 +16,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
     "dayjs-nuxt": "^1.2.7",
     "nuxt": "^3.7.4",
-    "nuxt-quasar-ui": "^2.0.5",
+    "nuxt-quasar-ui": "^2.0.6",
     "sass": "^1.68.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
