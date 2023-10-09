@@ -19,24 +19,24 @@
 </style>
 
 <script setup lang="ts">
-import order_menu from '~/assets/images/header/logo.jpg'
-import self_serve from '~/assets/images/header/order.png'
-import shopping_cart from '~/assets/images/header/shopping_cart_image.png'
+import order_menu from '~/assets/images/header/menu1.png'
+import self_serve from '~/assets/images/header/menu.png'
+import shopping_cart from '~/assets/images/header/food_cart2.png'
 const categoryItem = ref([
     {
         link: "",
         image: order_menu,
-        title: "Restaurants Order Menu",
+        title: "Restaurants Menu",
     },
     {
         link: "",
         image: self_serve,
-        title: "Order What You Need",
+        title: "Order Foods / Drink/ Dessert",
     },
     {
         link: "",
         image: shopping_cart,
-        title: "My Order",
+        title: "Order Cart",
     },
 ])
 </script>

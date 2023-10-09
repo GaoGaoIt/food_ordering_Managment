@@ -3,7 +3,7 @@
         <div class="tw-pl-4">
             <div class="logo-container">
                 <a class="tw-flex tw-items-center" href="/">
-                    <img class="logo-image" src="@/assets/images/header/logo.jpg" height="48px" width="48px" /> </a>
+                    <img class="logo-image" src="@/assets/images/header/rest1.png" height="48px" width="48px" /> </a>
             </div>
         </div>
         <div class="tw-flex tw-items-center tw-gap-x-4 tw-pr-4">
