@@ -1,7 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: { enabled: false },
-	ssr: false,
+	devtools: {
+		enabled: true,
+
+		timeline: {
+			enabled: true,
+		},
+	},
+	ssr: true,
+	alias: {
+		assets: "/<rootDir>/assets"
+	},
 	app: {
 		head: {
 			title: "dev-food_managment", //app tittle
@@ -17,17 +26,15 @@ export default defineNuxtConfig({
 			],
 		}
 	},
-	alias: {
-		assets: "/<rootDir>/assets"
-	},
 	modules: [
 		'nuxt-quasar-ui',
-		'@pinia/nuxt',
-		'@pinia-plugin-persistedstate/nuxt',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/i18n',
-		'dayjs-nuxt'
+		'dayjs-nuxt',
+		'@pinia/nuxt',
+		'@pinia-plugin-persistedstate/nuxt',
 	],
+
 	quasar: {
 		plugins: ['Notify', 'Dialog', 'Loading'],
 	},
@@ -38,16 +45,6 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
-
-	imports: {
-		dirs: [
-			'composables/**',
-			'assets/**',
-			'pages/**',
-			'component/**'
-		]
-	},
-
 	tailwindcss: {
 		cssPath: '~/assets/css/tailwind.css',
 		configPath: 'tailwind.config',
@@ -68,12 +65,11 @@ export default defineNuxtConfig({
 		langDir: 'lang',
 		defaultLocale: 'zh',
 	},
-
 	dayjs: {
-		locales: ['zh', 'en'],
-		plugins: ['relativeTime', 'utc', 'timezone', 'customParseFormat'],
-		defaultLocale: 'zh',
-		defaultTimezone: 'Asia/Malaysia',
+		// locales: ['zh', 'en'],
+		// plugins: ['relativeTime', 'utc', 'timezone'],
+		// defaultLocale: 'zh',
+		// defaultTimezone: 'Asia/Malaysia',
 	},
 
 })

@@ -11,7 +11,7 @@
 
             <q-btn to="" icon="notifications" unelevated padding="0px" size="md"/>
 
-            <q-btn to="_nuxt/pages/login/login.vue" icon="person" unelevated padding="0px"  size="md"/>
+            <q-btn to="/login" icon="person" unelevated padding="0px"  size="md"/>
 
         </div>
     </nav>
