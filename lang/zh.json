@@ -1,3 +1,10 @@
 {
-    
+    "login title":"登录",
+    "email or phone":"电邮 / 电话号码",
+    "password":"密码",
+    "pls insert password":"请输入密码",
+    "confirm password":"确认密码",
+    "sign up title":"登录",
+    "if new member":"还没有账号 ？ ",
+    "forgot password":"忘记密码 ？"
 }

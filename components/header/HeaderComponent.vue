@@ -11,7 +11,8 @@
 
             <q-btn to="" icon="notifications" unelevated padding="0px" size="md"/>
 
-            <q-btn to="/login" icon="person" unelevated padding="0px"  size="md"/>
+            <q-btn to="/profile" icon="person" unelevated padding="0px"  size="md"/>
+            <q-btn to="/login" icon="person" unelevated padding="0px"  size="md" label="Login or  Register"/>
 
         </div>
     </nav>
