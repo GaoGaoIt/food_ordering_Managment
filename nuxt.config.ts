@@ -33,6 +33,7 @@ export default defineNuxtConfig({
 		'dayjs-nuxt',
 		'@pinia/nuxt',
 		'@pinia-plugin-persistedstate/nuxt',
+		'maz-ui/nuxt',
 	],
 
 	quasar: {
@@ -70,6 +71,12 @@ export default defineNuxtConfig({
 		// plugins: ['relativeTime', 'utc', 'timezone'],
 		// defaultLocale: 'zh',
 		// defaultTimezone: 'Asia/Malaysia',
+	},
+	build: {
+		transpile: ['maz-ui' ,'vue-avatar-editor-improved'], // ⚠️ important ⚠️
+	},
+	mazUi: {
+		injectUseToast: true,
 	},
 
 })
