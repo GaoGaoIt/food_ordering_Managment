@@ -17,7 +17,7 @@
             </q-input>
             <div v-if="hint" class="tw-text-sc-red tw-text-sc-subtitle2">密码必须为8-20位，字元数字混合。</div>
         </div>
-        <div v-if="showConfirmPassword">
+        <div v-if="showConfirmPassword" class="tw-mb-4">
             <span >{{ $t('confirm password') }}</span>
             <q-input
                 v-model="confirmPassword"

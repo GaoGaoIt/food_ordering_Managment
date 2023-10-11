@@ -1,0 +1,59 @@
+.login-wrapper {
+    @apply tw-h-full tw-bg-[url('@/assets/images/cafeBg.jpg')]
+    tw-bg-no-repeat
+    tw-bg-cover;
+
+    .login-container {
+        @apply tw-grid tw-grid-cols-12 tw-place-content-center tw-p-4 tw-max-w-[768px] md:tw-rounded-lg md:tw-px-4 md:tw-mx-auto tw-h-full;
+
+        .logo-image {
+            @apply tw-w-[80px] tw-col-span-12 md:tw-w-[100px];
+        }
+
+        .login-form {
+            @apply tw-mt-12 tw-mb-80 tw-col-span-12 tw-items-center;
+
+            .login-header {
+                @apply tw-flex tw-justify-between;
+
+                .login-title {
+                    @apply tw-text-fi-h5 tw-underline tw-underline-offset-8 tw-text-blue-800
+                }
+            }
+
+            .body-header-input {
+                @apply tw-mt-4;
+
+                .body-herder-input-title {
+                    @apply tw-text-fi-subtitle2 tw-font-bold;
+                }
+            }
+
+            .form-action {
+                @apply tw-flex tw-justify-between tw-items-center;
+
+                .form-action-btn {
+                    @apply tw-font-bold tw-text-[12px] tw-text-blue-700;
+                }
+            }
+
+            .login-action {
+                @apply tw-grid tw-grid-cols-12 tw-mt-4;
+
+                .login-btn {
+                    @apply tw-bg-blue-600 tw-col-span-12 tw-text-white tw-cursor-pointer;
+                }
+
+                .signup-text {
+                    @apply tw-text-gray-600 tw-text-fi-caption tw-mr-2 tw-font-bold;
+                }
+
+                .signup-link {
+                    @apply tw-col-span-12 tw-text-blue-600 tw-mx-auto tw-my-4 tw-text-fi-caption tw-font-bold;
+                }
+            }
+
+
+        }
+    }
+}
