@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import zh from './lang/zh.json'
 export default defineNuxtConfig({
 	devtools: {
 		enabled: true,
@@ -30,10 +31,10 @@ export default defineNuxtConfig({
 		'nuxt-quasar-ui',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/i18n',
-		'dayjs-nuxt',
 		'@pinia/nuxt',
 		'@pinia-plugin-persistedstate/nuxt',
 		'maz-ui/nuxt',
+		'dayjs-nuxt',
 	],
 
 	quasar: {
@@ -53,7 +54,7 @@ export default defineNuxtConfig({
 	css: [
 		'~/assets/css/quasar.scss',
 		// '@fortawesome/fontawesome-svg-core/styles.css',
-		// 'maz-ui/css/main.css',
+		'maz-ui/css/main.css',
 	],
 	i18n: {
 		locales: [
@@ -67,10 +68,10 @@ export default defineNuxtConfig({
 		defaultLocale: 'zh',
 	},
 	dayjs: {
-		// locales: ['zh', 'en'],
-		// plugins: ['relativeTime', 'utc', 'timezone'],
-		// defaultLocale: 'zh',
-		// defaultTimezone: 'Asia/Malaysia',
+		locales: ['en', 'zh'],
+		plugins: ['relativeTime', 'utc', 'timezone', 'updateLocale'],
+		defaultLocale: 'zh',
+		defaultTimezone: 'Asia/Malaysia',
 	},
 	build: {
 		transpile: ['maz-ui' ,'vue-avatar-editor-improved'], // ⚠️ important ⚠️
