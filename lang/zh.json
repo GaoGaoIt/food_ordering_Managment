@@ -15,6 +15,7 @@
     "name":"名字",
     "pls insert your name":"请输入名字",
     "phone number":"电话号码",
-    "pls insert phone number":"请输入电话号"
+    "pls insert phone number":"请输入电话号",
+    "notification":"信息"
     
 }

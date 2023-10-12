@@ -1,6 +1,6 @@
 <template>
-    <q-layout>
-        <q-page-container>
+    <q-layout class="default-body">
+        <q-page-container class="page-container">
 
             <HeaderComponent />
 
@@ -17,10 +17,13 @@
 </template>
 
 <style scoped>
+.default-body{
+    @apply tw-mx-auto;
+}
+.page-container{
+	@apply tw-h-full !important;
+}
 .default-container{
-    @apply  tw-pt-28 tw-mx-4
+    @apply  tw-pt-16;
 }
 </style>
-
-<script setup>
-</script>
