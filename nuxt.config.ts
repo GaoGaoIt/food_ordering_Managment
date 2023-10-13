@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 	},
 	ssr: true,
 	alias: {
-		assets: "/<rootDir>/assets"
+		assets: "/_nuxt/assets"
 	},
 	app: {
 		head: {

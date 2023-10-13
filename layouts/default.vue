@@ -21,9 +21,9 @@
     @apply tw-mx-auto;
 }
 .page-container{
-	@apply tw-h-full !important;
+	@apply tw-h-full tw-mx-4 !important;
 }
 .default-container{
-    @apply  tw-pt-16;
+    @apply  tw-pt-16 tw-pb-16;
 }
 </style>
