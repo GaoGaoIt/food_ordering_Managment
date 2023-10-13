@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <div class="tw-w-full tw-h-full tw-p-4 tw-bg-gray-300">
+        <div class="tw-w-full tw-h-full tw-p-4 tw-bg-[#FDEDEE]">
             <!-- top bavigation header -->
             <div class="tw-flex tw-justify-between tw-items-center">
                 <div class="tw-flex tw-gap-x-4">
