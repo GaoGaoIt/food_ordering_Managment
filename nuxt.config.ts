@@ -35,6 +35,7 @@ export default defineNuxtConfig({
 		'@pinia-plugin-persistedstate/nuxt',
 		'maz-ui/nuxt',
 		'dayjs-nuxt',
+		'@sidebase/nuxt-auth'
 	],
 
 	quasar: {
@@ -74,10 +75,59 @@ export default defineNuxtConfig({
 		defaultTimezone: 'Asia/Malaysia',
 	},
 	build: {
-		transpile: ['maz-ui' ,'vue-avatar-editor-improved'], // ⚠️ important ⚠️
+		transpile: ['maz-ui', 'vue-avatar-editor-improved'], // ⚠️ important ⚠️
 	},
 	mazUi: {
 		injectUseToast: true,
 	},
+	auth: {
+		baseURL: process.env.BaseApiUrl,
+		provider: {
+			type: 'local',
+			endpoints: {
+				signIn: {
+					path: `auth/login`,
+					method: 'post',
+				},
+				signOut: {
+					path: `auth/logout`,
+					method: 'post',
+				},
+				signUp: {
+					path: `auth/register`,
+					method: 'post',
+				},
+				getSession: {
+					path: `/my`,
+					method: 'get',
+				},
+			},
+			pages: {
+				login: `/`,
+			},
+			token: {
+				signInResponseTokenPointer: '/data/token',
+				type: 'Bearer',
+				headerName: 'Authorization',
+				sameSiteAttribute: 'lax',
+				maxAgeInSeconds: 31536000
+			},
+		},
+		session: {
+			enableRefreshOnWindowFocus: false,
+			enableRefreshPeriodically: false,
+		},
+		globalAppMiddleware: {
+			isEnabled: false,
+			addDefaultCallbackUrl: false,
+		}
+	},
+	runtimeConfig: {
+		public: {
+			apiBase: process.env.BaseApiUrl,
+			
+		},
+	},
+
 
 })
