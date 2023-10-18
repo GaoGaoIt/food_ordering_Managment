@@ -13,6 +13,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "@sidebase/nuxt-auth": "^0.6.0-beta.7",
     "dayjs-nuxt": "^2.0.2",
     "nuxt": "^3.7.4",
     "nuxt-quasar-ui": "^2.0.6",
@@ -23,14 +24,17 @@
   },
   "dependencies": {
     "@nuxtjs/dayjs": "^1.4.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
     "@pinia/nuxt": "^0.4.11",
     "@quasar/extras": "^1.16.7",
+    "@vueuse/core": "^10.5.0",
     "dayjs": "^1.11.10",
     "libphonenumber-js": "^1.10.47",
     "maz-ui": "^3.17.0",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
-    "quasar": "^2.12.7"
+    "quasar": "^2.12.7",
+    "vue3-lottie": "^3.2.0"
   }
 }

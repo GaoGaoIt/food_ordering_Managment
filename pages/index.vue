@@ -54,6 +54,7 @@ import order_menu from '~/assets/images/header/menu1.png'
 import self_serve from '~/assets/images/header/menu.png'
 import shopping_cart from '~/assets/images/header/food_cart2.png'
 import beerIcon from 'img:@assets/images/beer.png'
+import { useAuthStore } from '~/stores/AuthStore'
 
 const tab = ref('menu');
 const categoryItem = ref([
@@ -73,4 +74,8 @@ const categoryItem = ref([
         title: "Order Cart",
     },
 ])
+
+const authStore = useAuthStore();
+    const { data } = useAuth();    
+    authStore.setUser(data.value?.data);
 </script>

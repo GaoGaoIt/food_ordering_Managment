@@ -1,5 +1,6 @@
 <template>
-    <nav class="tw-flex tw-bg-white tw-justify-between tw-mx-auto tw-fixed tw-z-[2000] tw-w-full tw-h-16 tw-items-center tw-pr-4">
+    <nav
+        class="tw-flex tw-bg-white tw-justify-between tw-mx-auto tw-fixed tw-z-[2000] tw-w-full tw-h-16 tw-items-center tw-pr-4">
         <div class="">
             <div class="logo-container">
                 <a class="tw-flex tw-items-center" href="/">
@@ -9,10 +10,11 @@
         <div class="tw-flex tw-gap-x-4 tw-pr-4">
             <q-btn to="" icon="shopping_cart" unelevated padding="0px" size="md" />
 
-            <q-btn to="/notification" icon="notifications" unelevated padding="0px" size="md"/>
+            <q-btn to="/notification" icon="notifications" unelevated padding="0px" size="md" />
 
-            <q-btn to="" icon="person" unelevated padding="0px"  size="md"/>
-            <q-btn to="/login"  unelevated padding="0px"  size="md" :label="$t('Login')"/>
+            <q-btn to="/login" unelevated padding="0px" size="md" :label="$t('Login')" v-if="!authStore.getUser()" />
+            <!-- <q-btn @click="logout()" unelevated padding="0px" size="md" :label="$t('logout')" /> -->
+            <q-btn to="/userProfile" icon="person" unelevated padding="0px" size="md" v-else />
 
         </div>
     </nav>
@@ -20,6 +22,18 @@
 
 <!-- <style src="./HeaderComponent.scss" lang="scss"></style> -->
 <script setup >
+
+import { useAuthStore } from '~/stores/AuthStore';
+
+const authStore = useAuthStore();
+
+console.log('user', authStore.getUser);
+
+const SearchButton = computed(() => {
+    return authStore.getUser() ? '显示结果' : '登录/注册 显示结果';
+
+})
+
 
 
 </script>
