@@ -8,7 +8,7 @@ const { signOut } = useAuth();
 
 async function logout() {
 
-    console.log('click click');
+
 
     await signOut({ callbackUrl: '/' });
     

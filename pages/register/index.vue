@@ -87,8 +87,9 @@ const formData = reactive({
 });
 
 const updateTel = (tel: string) => {
-    formData.tel = tel;
+    formData.tel = tel.replace(/[^0-9]/g, '');
 };
+
 const updatePassword = (password: string) => {
     formData.password = password;
 };
@@ -132,8 +133,6 @@ async function register() {
 
         const user = await signUp(credentials, { callbackUrl: '/' });
 
-        console.log('uesrdat', user);
-
 
         // Registration was successful
         $q.loading.hide();
@@ -147,10 +146,10 @@ async function register() {
 
     } catch (error) {
         $q.loading.hide();
-        console.error('Error message:', error.message);
+        console.error('Error message:', error.data.message);
 
         // Show an error dialog for registration failure
-        validateInput('Error', `Registration failed: ${error.message}`, 'error');
+        validateInput('Error', `Registration failed: ${error.data.message}`, 'error');
     }
 }
 

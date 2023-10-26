@@ -27,12 +27,7 @@ import { useAuthStore } from '~/stores/AuthStore';
 
 const authStore = useAuthStore();
 
-console.log('user', authStore.getUser);
 
-const SearchButton = computed(() => {
-    return authStore.getUser() ? '显示结果' : '登录/注册 显示结果';
-
-})
 
 
 

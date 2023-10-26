@@ -8,6 +8,12 @@ export default defineNuxtConfig({
 			enabled: true,
 		},
 	},
+	runtimeConfig: {
+		public: {
+			apiBase: process.env.BaseApiUrl,
+			imageUrl : process.env.imageUrl
+		},
+	},
 	ssr: true,
 	alias: {
 		assets: "/_nuxt/assets"
@@ -122,11 +128,12 @@ export default defineNuxtConfig({
 			addDefaultCallbackUrl: false,
 		}
 	},
-	runtimeConfig: {
-		public: {
-			apiBase: process.env.BaseApiUrl,
-			
-		},
+	vite: {
+		vue: {
+			script: {
+				defineModel: true,
+			}
+		}
 	},
 
 
