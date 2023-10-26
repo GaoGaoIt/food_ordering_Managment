@@ -2,6 +2,7 @@
     <q-input dense filled :class="classinput" :type="type" :label="label">
 
     </q-input>
+
         
     
 </template>
