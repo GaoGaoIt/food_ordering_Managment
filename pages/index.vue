@@ -41,7 +41,7 @@
         </div>
     </div>
 </template>
-  
+
 <style>
 .content-container {
     @apply tw-grid tw-grid-cols-12;

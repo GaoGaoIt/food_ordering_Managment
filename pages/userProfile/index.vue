@@ -99,20 +99,20 @@
   }
   
   .avatar {
-    width: 100px; /* Adjust the size as needed */
-    height: 100px; /* Adjust the size as needed */
+    width: 100px;
+    height: 100px; 
     border-radius: 50%;
   }
   
   .table-separator {
     border: 0;
     height: 2px;
-    background-color: #ddd; /* Adjust the color as needed */
+    background-color: #ddd; 
     margin: 10px 0;
   }
   
   .logout-button {
-    margin-left: 10px; /* Add space between the button and the title */
+    margin-left: 10px; 
   }
   </style>
   
@@ -124,11 +124,11 @@
   }
   
   function editAvatar() {
-    // Add your code to handle avatar editing
+
   }
   
   function changePassword() {
-    // Add your code to handle password change
+
   }
   </script>
   
