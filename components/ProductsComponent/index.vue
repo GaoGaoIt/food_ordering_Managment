@@ -8,7 +8,7 @@
                         Rm {{ product.Products_price }}
                     </div>
                 </q-img>
-
+            
                 <q-card-section>
                     <div class="tw-flex">
                         <span class="tw-text-xl md:tw-text-2xl tw-font-poppins tw-font-bold">
@@ -29,7 +29,7 @@
                     </div>
                     <div>
                         <q-btn unelevated  color="blue" v-if="!authStore.getUser()" class="tw-p-4 tw-w-full tw-w-22">
-                            <span class="tw-mx-auto" to="/login" >Login</span>
+                            <span class="tw-mx-auto" to="login" >Login</span>
                         </q-btn>
                         <q-btn unelevated dense color="blue" v-else>
                             <span class="tw-text-md ">Checkout</span>
