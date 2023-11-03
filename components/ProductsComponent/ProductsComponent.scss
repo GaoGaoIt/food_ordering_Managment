@@ -2,3 +2,17 @@
 
     @apply  tw-bg-black tw-opacity-75;
 }
+
+.infoContainer{
+    @apply  tw-rounded-lg tw-p-2 #{!important};
+
+}
+
+.cardAction{
+    @apply tw-flex tw-justify-between 
+
+}
+
+.infoTitle{
+    @apply tw-p-0 #{!important};
+}
