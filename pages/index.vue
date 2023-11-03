@@ -2,7 +2,7 @@
     <div>
         <div class="">
             <div class="tw-flex tw-fixed tw-z-[2000] tw-w-full tw-mx-auto tw-bg-white tw-pr-8">
-                <div class="tw-bg-[#D6D6D6] tw-w-full tw-pl-8">
+                <div class="tw-bg-[#D6D6D6] tw-w-full tw-pl-8 tw-rounded-lg">
 
                     <q-tabs v-model="tab" align="left" no-caps narrow-indicator>
                         <q-tab :name="day.name" class="tw-flex" v-for="day in  dayList">
