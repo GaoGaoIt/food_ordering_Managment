@@ -1,0 +1,7 @@
+.q-expansion-item{
+    @apply tw-gap-y-4 #{!important};
+}
+
+.paymentBtn{
+    @apply tw-w-full tw-bg-green-800 tw-rounded-lg tw-text-white tw-flex tw-justify-between
+}

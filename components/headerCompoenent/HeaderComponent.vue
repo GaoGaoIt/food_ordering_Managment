@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="tw-flex tw-gap-x-4 tw-pr-4">
-            <q-btn to="" icon="shopping_cart" unelevated padding="0px" size="md" />
+            <q-btn to="/orderCart" icon="shopping_cart" unelevated padding="0px" size="md" />
 
             <q-btn to="/notification" icon="notifications" unelevated padding="0px" size="md" />
 
