@@ -1,41 +1,38 @@
 <template>
     <div>
         <div class="">
-            <div class="tw-flex tw-fixed tw-z-[2000] tw-w-full tw-mx-auto tw-bg-white">
-                <q-tabs class="" v-model="tab" align="justify" narrow-indicator>
-                    <q-tab name="menu" class="tw-flex">
-                        <div class="tw-flex tw-items-center">
-                            <q-icon name="restaurant_menu" size="md" />
-                            <span>Menu</span>
-                        </div>
-                    </q-tab>
-                    <q-tab name="drink" class="tw-flex">
-                        <div class="tw-flex tw-items-center">
-                            <q-icon name="img:_nuxt/assets/images/beer.png" size="md" />
-                            <span>Drink</span>
-                        </div>
-                    </q-tab>
-                </q-tabs>
+            <div class="tw-flex tw-fixed tw-z-[2000] tw-w-full tw-mx-auto tw-bg-white tw-pr-8">
+                <div class="tw-bg-[#D6D6D6] tw-w-full tw-pl-8">
+
+                    <q-tabs v-model="tab" align="left" no-caps narrow-indicator>
+                        <q-tab :name="day.name" class="tw-flex" v-for="day in  dayList">
+                            <div class="tw-flex tw-items-center">
+                                <span class="tw-font-bold">{{ day.name }}</span>
+                            </div>
+                        </q-tab>
+                    </q-tabs>
+                </div>
             </div>
             <div class="tw-pt-16 ">
-                <q-tab-panels v-model="tab" swipeable animated class="tw-p-0">
-                    <q-tab-panel name="menu">
-                        <div class="text-h6">Foods</div>
-                        <div class="">
-                            <ProductsComponent :productsList="productsList" />
+                <q-tab-panels v-model="tab" swipeable animated class="tw-p-0" v-for="day in  dayList">
+                    <q-tab-panel :name="day.name">
+                        <div >                      
+                            <q-tabs v-model="categoryTab" align="left" no-caps narrow-indicator>
+                                <q-tab :name="category.category" class="tw-flex" v-for=" category in  categoryList">
+                                    <div class="tw-flex tw-items-center">
+                                        <span class="tw-font-bold">{{ category.category }}</span>
+                                    </div>
+                                </q-tab>
+                            </q-tabs>
                         </div>
-
-
-                    </q-tab-panel>
-
-                    <q-tab-panel name="drink">
-                        <div class="text-h6">Drink</div>
-                        <div class="content-container tw-flex tw-gap-4 tw-mt-4">
-                            <!-- <ProductsComponent v-for="test in 12" /> -->
+                        <div class="tw-bg-blue-500 tw-w-full tw-h-full tw-mt-4">
+                            <q-tab-panels v-model="categoryTab">
+                                <q-tab-panel :name="category.category " v-for=" category in  categoryList">
+                                    <ProductsComponent :productsList="productsList" />
+                                </q-tab-panel>
+                            </q-tab-panels>
                         </div>
                     </q-tab-panel>
-
-
                 </q-tab-panels>
             </div>
         </div>
@@ -87,11 +84,52 @@ const getproductsList = async () => {
 
 
 
-const tab = ref('menu');
+const tab = ref('Monday');
+const categoryTab  =ref('All');
 onMounted(() => {
     getproductsList();
 });
 
+const dayList = ref([
+    {
+        id: 1,
+        name: "Monday"
+    },
+    {
+        id: 2,
+        name: "Tuesday"
+    },
+    {
+        id: 3,
+        name: "Wednesday"
+    },
+    {
+        id: 4,
+        name: "Thursday"
+    },
+    {
+        id: 5,
+        name: "Friday"
+    },
+]);
 
+const categoryList  =ref([
+    {
+        id:1,
+        category : "All",
+    },
+    {
+        id:2,
+        category:"Noodle"
+    },
+    {
+        id:2,
+        category:"Rice"
+    },
+    {
+        id:2,
+        category:"Set lunch"
+    },
+]);
 
 </script>
