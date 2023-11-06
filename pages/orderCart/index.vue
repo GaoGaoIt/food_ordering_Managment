@@ -57,7 +57,7 @@
                                 <q-card>
                                     <q-card-section>
                                         <q-form>
-                                            <q-input type="textarea" label="Mark On Your Food Command" autogrow="true" />
+                                            <q-input type="textarea" label="Mark On Your Food Command" autogrow />
                                         </q-form>
                                     </q-card-section>
                                 </q-card>
