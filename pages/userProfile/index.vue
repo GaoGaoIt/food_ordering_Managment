@@ -20,6 +20,7 @@
                   <q-avatar size="92px">
                     <q-img src="https://picsum.photos/id/1/200/300" />
                   </q-avatar>
+
                   <div>
                     <span class="tw-text-white tw-text-center tw-truncate tw-text-lg">chan cheee sam</span>
                   </div>
@@ -34,7 +35,7 @@
                 </div>
               </div>
               <div class="tw-col-span-12 tw-mt-4">
-                <q-btn unelevated class="profilePicBtn">Edit Profile</q-btn>
+                <q-btn to="/editProfile" unelevated class="profilePicBtn">Edit Profile</q-btn>
               </div>
             </div>
           </q-card>
@@ -46,7 +47,7 @@
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="/favorite">
               <q-item-section>My Favorite Food</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
