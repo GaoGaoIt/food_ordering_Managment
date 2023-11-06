@@ -1,134 +1,89 @@
 <template>
-    <q-card class="card">
-      <q-card-section>
-        <div class="personal-info-header">
-          <h2 class="section-title">
-            <span class="larger-text">Personal Information</span>
-          </h2>
-          <q-btn
-            @click="logout()"
-            color="primary"
-            label="Logout"
-            class="logout-button"
-          />
+  <div>
+    <div>
+      <div class="tw-flex tw-mt-8 tw-items-baseline tw-gap-4 tw-text-xlc">
+        <span class="tw-font-bold tw-text-4xl tw-gray-500">My Profile</span>
+      </div>
+      <div class="tw-mt-4">
+        <q-separator size="2px" class="tw-gray-300 tw-w-full" />
+      </div>
+    </div>
+    <div class="tw-mt-8 tw-justify-between">
+      <div class="tw-grid tw-grid-cols-12 tw-gap-4 tw-w-full">
+        <div class="tw-col-span-12 md:tw-col-span-6">
+          <q-card class="">
+            <div class=" tw-bg-blue-500 tw-grid tw-grid-cols-12 tw-p-4 tw-gap-x-4">
+              <!-- avatar -->
+              <div class="tw-col-span-6">
+                <div class="tw-flex tw-flex-col tw-items-center tw-gap-4">
+
+                  <q-avatar size="92px">
+                    <q-img src="https://picsum.photos/id/1/200/300" />
+                  </q-avatar>
+                  <div>
+                    <span class="tw-text-white tw-text-center tw-truncate tw-text-lg">chan cheee sam</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tw-col-span-6 tw-flex tw-justify-center">
+                <div class="tw-flex tw-items-center">
+                  <div class="tw-flex tw-flex-col tw-gap-y-4">
+                    <span class="tw-font-semibold tw-text-white tw-text-lg">Wallet Amount</span>
+                    <span class="tw-text-center tw-text-white tw-text-lg">Rm 320</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tw-col-span-12 tw-mt-4">
+                <q-btn unelevated class="profilePicBtn">Edit Profile</q-btn>
+              </div>
+            </div>
+          </q-card>
         </div>
-        <div class="avatar-section">
-          <img
-            src="/assets/images/personalAvatar.png"
-            alt="Avatar"
-            class="avatar"
-          />
-          <q-btn
-            label="Edit Avatar"
-            icon="edit"
-            color="primary"
-            @click="editAvatar"
-          />
-        </div><br>
-        <q-item>
-          <q-item-section>
-            <q-item-label class="label">Name:</q-item-label>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="info">Your Name</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item>
-          <q-item-section>
-            <q-item-label class="label">Email:</q-item-label>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="info">your@email.com</q-item-label>
-          </q-item-section>
-        </q-item>
-        <!-- You can add more personal information fields here -->
-      </q-card-section>
-      <hr class="table-separator" />
-      <q-card-section>
-        <h2 class="section-title">Wallet</h2>
-        <q-item>
-          <q-item-section>
-            <q-item-label class="label">Balance:</q-item-label>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="info">RM 100</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-card-section>
-      <hr class="table-separator" />
-      <q-card-section>
-        <h2 class="section-title">Change Password</h2>
-        <!-- Create a form to change the password -->
-        <q-btn
-          label="Change Password"
-          icon="arrow_forward"
-          color="primary"
-          @click="changePassword"
-        />
-      </q-card-section>
-    </q-card>
-  </template>
-  
-  <style scoped>
-  .card {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .personal-info-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .section-title {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  .label {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .info {
-    font-style: italic;
-    font-size: 16px;
-  }
-  
-  .avatar {
-    width: 100px;
-    height: 100px; 
-    border-radius: 50%;
-  }
-  
-  .table-separator {
-    border: 0;
-    height: 2px;
-    background-color: #ddd; 
-    margin: 10px 0;
-  }
-  
-  .logout-button {
-    margin-left: 10px; 
-  }
-  </style>
-  
-  <script setup>
-  const { signOut } = useAuth();
-  
-  async function logout() {
-    await signOut({ callbackUrl: '/' });
-  }
-  
-  function editAvatar() {
+        <div class="tw-col-span-12 md:tw-col-span-6 tw-w-full">
+          <q-list bordered separator>
+            <q-item clickable v-ripple>
+              <q-item-section> My Wallet</q-item-section>
+              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
+            </q-item>
 
-  }
-  
-  function changePassword() {
+            <q-item clickable v-ripple>
+              <q-item-section>My Favorite Food</q-item-section>
+              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
+            </q-item>
 
-  }
-  </script>
+            <q-item clickable v-ripple>
+              <q-item-section>Payment History</q-item-section>
+              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
+            </q-item>
+            <q-item clickable v-ripple>
+              <q-item-section>Order History</q-item-section>
+              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
+            </q-item>
+            <q-item clickable v-ripple>
+              <q-item-section>Notification</q-item-section>
+              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
+            </q-item>
+            <q-item clickable v-ripple @click="logout">
+              <q-item-section>Logout</q-item-section>
+            </q-item>
+          </q-list>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</template>
+  
+<style scoped src="./profile.scss"></style>
+  
+<script setup>
+const { signOut } = useAuth();
+
+async function logout() {
+  await signOut({ callbackUrl: '/' });
+}
+
+
+</script>
   
