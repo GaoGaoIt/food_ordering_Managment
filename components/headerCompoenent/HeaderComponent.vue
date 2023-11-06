@@ -8,14 +8,34 @@
             </div>
         </div>
         <div class="tw-flex tw-gap-x-4 tw-pr-4">
-            <q-btn to="" icon="shopping_cart" unelevated padding="0px" size="md" />
+            <div class="icon-text">
+                <q-btn to="" icon="shopping_cart" unelevated padding="0px" size="md" />
+                <div>Order Cart</div>
+            </div>
 
-            <q-btn to="/notification" icon="notifications" unelevated padding="0px" size="md" />
+            <div class="icon-text">
+                <q-btn to="/notification" icon="payment" unelevated padding="0px" size="md" />
+                <div>Payment</div>
+            </div>
 
-            <q-btn to="/login" unelevated padding="0px" size="md" :label="$t('Login')" v-if="!authStore.getUser()" />
-            <!-- <q-btn @click="logout()" unelevated padding="0px" size="md" :label="$t('logout')" /> -->
-            <q-btn to="/userProfile" icon="person" unelevated padding="0px" size="md" v-else />
+            <div class="icon-text">
+                <q-btn to="/notification" icon="history" unelevated padding="0px" size="md" />
+                <div>My Order</div>
+            </div>
 
+            <div class="icon-text">
+                <q-btn to="/notification" icon="notifications" unelevated padding="0px" size="md" />
+                <div>Notification</div>
+            </div>
+
+            <div class="icon-text" v-if="!authStore.getUser()">
+                <q-btn to="/login" color="blue-7" padding-left="10px" size="md" :label="$t('Login')" />
+            </div>
+
+            <div class="icon-text" v-else>
+                <q-btn to="/userProfile" icon="person" unelevated padding="0px" size="md" />
+                <div>User Profile</div>
+            </div>
         </div>
     </nav>
 </template>
@@ -32,3 +52,17 @@ const authStore = useAuthStore();
 
 
 </script>
+
+<style scoped>
+.icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.icon-text i {
+    font-size: 24px; 
+}
+</style>

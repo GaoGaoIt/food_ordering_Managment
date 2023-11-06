@@ -5,7 +5,7 @@
             <q-card class="tw-m-2">
                 <q-img :src="`${config.public.imageUrl}/${product.image_url}`" :ratio="16 / 9">
                     <div class="absolute-top-right text-subtitle2 tw-rounded-md">
-                        Rm {{ product.Products_price }}
+                        RM {{ product.Products_price }}
                     </div>
                 </q-img>
 
