@@ -4,9 +4,9 @@
             <div class="tw-flex tw-fixed tw-z-[2000] tw-w-full tw-mx-auto tw-bg-white tw-pr-8">
                 <div class="tw-bg-[#D6D6D6] tw-w-full tw-rounded-lg">
 
-                    <q-tabs v-model="tab" align="left" no-caps narrow-indicator>
+                    <q-tabs v-model="tab" align="center" no-caps narrow-indicator>
                         <q-tab :name="day.name" class="tw-flex" v-for="day in  dayList">
-                            <div class="tw-flex tw-items-center">
+                            <div class="tw-flex tw-items-center tw-pl-20 tw-pr-20">
                                 <span class="tw-font-bold">{{ day.name }}</span>
                             </div>
                         </q-tab>
