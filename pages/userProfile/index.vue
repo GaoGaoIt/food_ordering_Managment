@@ -26,11 +26,14 @@
                   </div>
                 </div>
               </div>
-              <div class="tw-col-span-6 tw-flex tw-justify-center">
+              <div class="tw-col-span-6 tw-flex tw-justify-center tw-items-center">
                 <div class="tw-flex tw-items-center">
                   <div class="tw-flex tw-flex-col tw-gap-y-4">
                     <span class="tw-font-semibold tw-text-white tw-text-lg">Wallet Amount</span>
-                    <span class="tw-text-center tw-text-white tw-text-lg">Rm 320</span>
+                    <div class="tw-flex tw-items-center">
+                      <span class="tw-text-white tw-text-lg">Rm 320</span>
+                      <q-icon name="visibility_off" class="tw-ml-2 tw-text-white tw-text-lg" size="22px" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -60,7 +63,7 @@
               <q-item-section>Order History</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="/notification">
               <q-item-section>Notification</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
