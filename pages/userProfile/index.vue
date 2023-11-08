@@ -59,14 +59,12 @@
               <q-item-section>Payment History</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
+
             <q-item clickable v-ripple>
               <q-item-section>Order History</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/notification">
-              <q-item-section>Notification</q-item-section>
-              <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
-            </q-item>
+
             <q-item clickable v-ripple @click="logout">
               <q-item-section>Logout</q-item-section>
             </q-item>
