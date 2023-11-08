@@ -9,7 +9,12 @@
                     <span>{{ $t('notification') }}</span>
                 </div>
                 <div>
-                    <q-btn class="" icon="tune" unelevated dense size="sm" />
+                    <q-btn-dropdown icon="more_vert" unelevated dense size="14px">
+                        <q-item>Payment</q-item>
+                        <q-item>Order Cancel</q-item>
+                        <q-item>Order Prepare</q-item>
+                        <q-item>Delivery</q-item>
+                      </q-btn-dropdown>
                 </div>
             </div>
             <div class="tw-pt-4">
@@ -68,9 +73,9 @@ const notifications = ref([
     {
         id: 1,
         userImage: "https://picsum.photos/200?random=2",
-        description: "test",
+        description: "Your payment is cancel.",
         type:"Payment",
-        status: "PENDING",
+        status: "Successful",
         orderStatus: "DONE",
         transactionStatus: "PENDING",
         timestamp: "2023-10-12 11:51:00 "
@@ -78,47 +83,7 @@ const notifications = ref([
     {
         id: 1,
         userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Payment",
-        status: "PENDING",
-        orderStatus: "DONE",
-        transactionStatus: "PENDING",
-        timestamp: "2023-10-12 11:40:00 "
-    },
-    {
-        id: 1,
-        userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Payment",
-        status: "PENDING",
-        orderStatus: "DONE",
-        transactionStatus: "PENDING",
-        timestamp: "2023-10-12 11:40:00 "
-    },
-    {
-        id: 1,
-        userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Order",
-        status: "Done",
-        orderStatus: "DONE",
-        transactionStatus: "PENDING",
-        timestamp: "2023-10-12 11:40:00 "
-    },
-    {
-        id: 1,
-        userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Payment",
-        status: "PENDING",
-        orderStatus: "DONE",
-        transactionStatus: "PENDING",
-        timestamp: "2023-10-12 11:40:00 "
-    },
-    {
-        id: 1,
-        userImage: "https://picsum.photos/200?random=2",
-        description: "test",
+        description: "Your payment is success.",
         type:"Payment",
         status: "Done",
         orderStatus: "DONE",
@@ -128,9 +93,9 @@ const notifications = ref([
     {
         id: 1,
         userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Payment",
-        status: "PENDING",
+        description: "Your order is on the way.",
+        type:"Delivery",
+        status: "On the way",
         orderStatus: "DONE",
         transactionStatus: "PENDING",
         timestamp: "2023-10-12 11:40:00 "
@@ -138,12 +103,42 @@ const notifications = ref([
     {
         id: 1,
         userImage: "https://picsum.photos/200?random=2",
-        description: "test",
-        type:"Payment",
+        description: "Your order is preparing done.",
+        type:"Order Prepare",
         status: "Done",
         orderStatus: "DONE",
         transactionStatus: "PENDING",
-        timestamp: "2023-10-12 11:40:00 "
+        timestamp: "2023-10-28 11:40:00 "
+    },
+    {
+        id: 1,
+        userImage: "https://picsum.photos/200?random=2",
+        description: "Your order is preparing done.",
+        type:"Order Prepare",
+        status: "Pending",
+        orderStatus: "DONE",
+        transactionStatus: "PENDING",
+        timestamp: "2023-10-21 11:40:00 "
+    },
+    {
+        id: 1,
+        userImage: "https://picsum.photos/200?random=2",
+        description: "Your order cancel have approve.",
+        type:"Order Cancel",
+        status: "Successful",
+        orderStatus: "DONE",
+        transactionStatus: "PENDING",
+        timestamp: "2023-11-6 11:40:00 "
+    },
+    {
+        id: 1,
+        userImage: "https://picsum.photos/200?random=2",
+        description: "Parcel has been delivered.",
+        type:"Delivery",
+        status: "Done",
+        orderStatus: "DONE",
+        transactionStatus: "PENDING",
+        timestamp: "2023-11-1 11:40:00 "
     },
 ])
 
