@@ -1,63 +1,32 @@
 <template>
-    <div class="tw-grid-cols-12 tw-gap-4 tw-grid">
-        <div class="tw-grid tw-col-span-12 xl:tw-col-span-3 md:tw-col-span-4" v-for='(product, index) in  productsList'>
-
-            <q-card class="tw-m-2 tw-p-2 tw-rounded-lg">
-                <div class="tw-rounded-lg">
-                    <q-img :src="`${config.public.imageUrl}/${product.image_url}`" :ratio="16 / 9" />
-                </div>
-
-                <div class="tw-bg-gray-400 infoContainer tw-mt-4  tw-h-[160px]">
-                    <q-card-section class="infoTitle">
-                        <div class="tw-flex tw-justify-between tw-items-center ">
-                            <span class="tw-text-lg md:tw-text-lg tw-font-poppins tw-font-bold">
-                                {{ product.Products_name }}
-                            </span>
-                            <span class=" tw-flex tw-text-lg md:tw-text-lg">Rm {{ product.Products_price }}</span>
-                        </div>
-                        <div class="tw-text-lg md:tw-text-lg ">
-                            By Jony Restaurant
-                        </div>
-                        <div>
-                            <span class="tw-text-blue-900 tw-text-md tw-font-semibold">{{
-                                $dayjs(product.Product_start_date).locale('en').format('h.mm a') }} - {{
-                                $dayjs(product.Product_end_date).locale('en').format('h.mm a') }}
-                            </span>
-                        </div>
-                    </q-card-section>
-                    <q-card-actions class="cardAction tw-items-center tw-mt-4">
-                        <div class="tw-flex tw-gap-2">
-                            <q-btn dense unelevated round>
-                                <q-icon name="favorite" color="red" size="md"></q-icon>
-                            </q-btn>
-                            <q-btn dense unelevated round>
-                                <q-icon name="shopping_cart" color="black" size="md"></q-icon>
-                            </q-btn>
-                        </div>
-                        <div>
-                            <q-btn unelevated color="blue" v-if="!authStore.getUser()" class="tw-p-4 tw-w-full tw-w-22">
-                                <span class="tw-mx-auto" @click="tologin">Login</span>
-                            </q-btn>
-                            <q-btn unelevated dense color="blue" v-else>
-                                <span class="tw-text-md ">Checkout</span>
-                            </q-btn>
-                        </div>
-                    </q-card-actions>
-                </div>
-
-            </q-card>
-        </div>
+    <div>
+      <q-tabs v-model="selectedCategory" align="justify">
+        <q-tab name="All">All</q-tab>
+        <q-tab :name="category.name" v-for="category in categories" :key="category.name">
+          {{ category.name }}
+        </q-tab>
+      </q-tabs>
+      <q-tab-panels v-model="selectedCategory" class="tw-mt-16">
+        <q-tab-panel name="All">
+          <productsCardComponent :products="productsList" />
+        </q-tab-panel>
+        <q-tab-panel :name="category.name" v-for="category in categories" :key="category.name">
+          <productsCardComponent :products="getProductsByCategory(category.name)" />
+        </q-tab-panel>
+      </q-tab-panels>
     </div>
-</template>
-<style lang="scss" src="./ProductsComponent.scss"></style>
+  </template>
+  
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import { useAuthStore } from '~/stores/AuthStore';
 import { ProductsCard } from '~/utilities/types/ProductsCard';
 
-
 const config = useRuntimeConfig();
-
 const authStore = useAuthStore();
+const selectedCategory = ref('All');
+const categories = ref([]);
 
 const props = withDefaults(
     defineProps<{
@@ -68,11 +37,28 @@ const props = withDefaults(
     }
 );
 const router = useRouter();
-const tologin = () => {
+
+const getCategories = async () => {
+    try {
+        const response = await $fetch(`${config.public.apiBase}/Products/productCategories`);
+        categories.value = response.data;
+    } catch (error) {
+        console.error('Error fetching categories', error);
+    }
+};
+
+const getProductsByCategory = (categoryName) => {
+    return props.productsList.filter(product => product.category_name === categoryName);
+};
+
+const toLogin = () => {
     router.push('/login');
-}
+};
 
 onMounted(() => {
-
-})
+    getCategories();
+});
 </script>
+  
+<style lang="scss" src="./ProductsComponent.scss"></style>
+  
