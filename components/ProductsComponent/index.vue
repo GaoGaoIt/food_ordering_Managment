@@ -28,6 +28,7 @@ const authStore = useAuthStore();
 const selectedCategory = ref('All');
 const categories = ref([]);
 
+
 const props = withDefaults(
     defineProps<{
         productsList: Array<ProductsCard>;

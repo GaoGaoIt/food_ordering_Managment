@@ -1,0 +1,6 @@
+.checkoutBtn{
+    @apply tw-w-full tw-bg-blue-600 tw-text-white;
+    .q-btn__content{
+        @apply tw-flex tw-gap-x-4;
+    }
+}
