@@ -15,6 +15,7 @@
                     <div class="tw-flex tw-justify-between tw-items-center">
                         <span class="tw-text-xl md:tw-text-lg tw-font-poppins tw-font-bold">
                             {{ product.name }}
+                            {{ product.id }}
                         </span>
                         <span class="tw-flex tw-text-lg md:tw-text-lg">Rm {{ product.price }}</span>
                     </div>
@@ -25,22 +26,20 @@
                         <div class="tw-w-full">
                             <div class="tw-w-full tw-flex tw-justify-between tw-gap-x-4">
                                 <div class="tw-flex">
-                                    <q-btn unelevated dense size="lg" @click="changeProductFavorite(index)">
+                                    <q-btn unelevated dense size="lg" @click="saveEventBookmark(product.id)">
                                         <q-icon
                                             :name="productFavorites[index] ? 'img:_nuxt/assets/images/favorite.svg' : 'img:_nuxt/assets/images/unfavorite.svg'"></q-icon>
                                     </q-btn>
-                                    <q-btn unelevated dense szie="lg">
+                                    <q-btn unelevated dense size="lg">
                                         <q-icon name="add_shopping_cart" size="md"></q-icon>
                                     </q-btn>
                                 </div>
                                 <div class="tw-w-full tw-flex">
-
                                     <q-btn class="checkoutBtn">
                                         <q-icon name="point_of_sale"></q-icon>
                                         <span>Checkout</span>
                                     </q-btn>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -51,31 +50,100 @@
 </template>
 
 <style lang="scss" src="./productsCardComponent.scss"></style>
-  
+
 <script setup lang="ts">
 import { useAuthStore } from '~/stores/AuthStore';
+const { token, status: authStatus } = useAuth();
+const $q = useQuasar();
+import { ref, onMounted, defineProps } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-const authStore = useAuthStore();
 const config = useRuntimeConfig();
 
 const props = defineProps({
     products: Array,
 });
 
-const productFavorites = ref([] as boolean[]);
+const productFavorites = ref<boolean[]>([]);
+const productIndexMapping = {};
 
-const changeProductFavorite = (productIndex:number) => {
-  if (props.products && props.products[productIndex]) {
-    productFavorites.value[productIndex] = !productFavorites.value[productIndex];
-  }
+if (props.products) {
+    props.products.forEach((product, index) => {
+        productFavorites.value[index] = false;
+        productIndexMapping[product.id] = index;
+    });
+}
+
+const saveEventBookmark = async (productId: number) => {
+    try {
+        if (authStatus.value === "authenticated") {
+            const index = productIndexMapping[productId];
+
+            if (index !== undefined) {
+                productFavorites.value[index] = !productFavorites.value[index];
+            }
+
+            const response = await useFetch(
+                `${config.public.apiBase}/saveFavorite`,
+                {
+                    method: "POST",
+                    body: {
+                        is_save: productFavorites.value[index],
+                        product_id: productId,
+                    },
+                    headers: {
+                        Authorization: token.value || null
+                    }
+                }
+            );
+
+            $q.notify({
+                position: 'top',
+                message: productFavorites.value[index] ? "已加入至最爱" : "已从最爱移除",
+            });
+        } else {
+            router.push('/login');
+        }
+    } catch (error) {
+        console.error('Error saving favorite:', error);
+    }
 };
 
-    const tologin = () => {
-        // Implement your tologin function here
-    };
+const getUserProductFavorite = async () => {
+    try {
+        const response = await $fetch(`${config.public.apiBase}/getFavorite`, {
+            headers: {
+                Authorization: token.value || null
+            }
+        });
+
+        const favoriteData = response.data.data;
+
+        favoriteData.forEach((favorite, index) => {
+            const product_id = favorite.product_id;
+
+            if (product_id !== undefined) {
+                if (!(product_id in productIndexMapping)) {
+                    productIndexMapping[product_id] = index;
+                }
+
+                productFavorites.value[productIndexMapping[product_id]] = true;
+            }
+        });
+    } catch (error) {
+        console.error('Error fetching user product favorites:', error);
+    }
+};
+
+onMounted(() => {
+    getUserProductFavorite();
+});
+
+const tologin = () => {
+    // Implement your tologin function here
+};
 </script>
-  
+
 <style scoped>
 /* Add your component-specific styles here */
 </style>
-  
