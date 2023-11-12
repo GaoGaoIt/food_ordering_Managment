@@ -119,21 +119,23 @@ const getUserProductFavorite = async () => {
 
         const favoriteData = response.data.data;
 
-        favoriteData.forEach((favorite, index) => {
+        favoriteData.forEach((favorite) => {
             const product_id = favorite.product_id;
 
             if (product_id !== undefined) {
-                if (!(product_id in productIndexMapping)) {
-                    productIndexMapping[product_id] = index;
-                }
+                // Assuming product_id is a unique identifier for each product
+                const index = props.products.findIndex(product => product.id === product_id);
 
-                productFavorites.value[productIndexMapping[product_id]] = true;
+                if (index !== -1) {
+                    productFavorites.value[index] = true;
+                }
             }
         });
     } catch (error) {
         console.error('Error fetching user product favorites:', error);
     }
 };
+
 
 onMounted(() => {
     getUserProductFavorite();
