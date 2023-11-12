@@ -15,7 +15,6 @@
                     <div class="tw-flex tw-justify-between tw-items-center">
                         <span class="tw-text-xl md:tw-text-lg tw-font-poppins tw-font-bold">
                             {{ product.name }}
-                            {{ product.id }}
                         </span>
                         <span class="tw-flex tw-text-lg md:tw-text-lg">Rm {{ product.price }}</span>
                     </div>
