@@ -99,7 +99,7 @@ const saveEventBookmark = async (productId: number) => {
 
             $q.notify({
                 position: 'top',
-                message: productFavorites.value[index] ? "已加入至最爱" : "已从最爱移除",
+                message: productFavorites.value[index] ? "Add Food To Favorite" : "Remove Food From Favorite",
             });
         } else {
             router.push('/login');
