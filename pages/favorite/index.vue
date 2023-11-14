@@ -3,11 +3,6 @@
     <div class="tw-mt-8 tw-text-xl">
       <div class="tw-flex tw-items-center tw-justify-between">
         <span class="tw-font-bold tw-text-4xl">Favorite</span>
-        <div class="tw-flex tw-gap-4">
-          <q-btn class="tw-rounded rounded-10 tw-text-sm" color="primary" icon="sort" size="12px" />
-          <q-btn class="tw-rounded rounded-10 tw-text-sm" icon="sort_by_alpha" size="12px" />
-          <q-btn class="tw-rounded rounded-10 tw-text-sm" color="primary" label="my orders" size="14px"/>
-        </div>
       </div>
     </div>
     <div class="tw-mt-4">
@@ -15,34 +10,79 @@
     </div>
 
     <!-- Container with space around the cards -->
-    <div v-for="test in 4" class="tw-mt-4">
-      <!-- Grid view for Food Cards -->
-      <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-2 tw-gap-4">
-        <!-- Repeat for 8 cards -->
-        <!-- Card 1 (Left) -->
-        <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-flex">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" style="height: 160px; max-width: 160px"></q-img>
-          <div class="tw-ml-4 tw-text-xl">
-            <div class="tw-text-lg tw-p-2">
-              <p class="tw-font-semibold-sm">Food Name 1</p>
-              <p class="tw-text-sm">Restaurant 1</p>
-            </div>
-          </div>
-          <q-icon name="favorite" color="red" size="50px" class="tw-ml-auto tw-pr-5 self-center"/>
-        </div>
-        
-        <!-- Card 1 (Right) -->
-        <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-flex">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" style="height: 160px; max-width: 160px"></q-img>
-          <div class="tw-ml-4 tw-text-xl">
-            <div class="tw-text-lg tw-p-2">
-              <p class="tw-font-semibold-sm">Food Name 1</p>
-              <p class="tw-text-sm">Restaurant 1</p>
-            </div>
-          </div>
-          <q-icon name="favorite" color="red" size="50px" class="tw-ml-auto tw-pr-5 self-center"/>
+    <div class="tw-mt-4">
+      <div class="tw-grid tw-grid-cols-12 tw-gap-4">
+        <div class="tw-col-span-12 md:tw-col-span-6" v-for="(product, index) in favoriteData">
+          <q-card class="" flat bordered>
+            <q-card-section horizontal class="tw-gap-4">
+              <q-img class="col-4" :src="`${config.public.imageUrl}/${product.product.image_url}`" :ratio="4/3"/>
+
+              <div class="tw-w-full tw-flex tw-items-center">
+                <div class="tw-flex-col">
+                  <div>
+                    <span class="tw-font-poppins tw-text-xl tw-font-semibold">{{ product.product.name }}</span>
+                  </div>
+                  <div>
+                    <span>Rm{{ product.product.price }}</span>
+                  </div>
+                </div>
+              </div>
+              <q-card-actions>
+                <q-btn class="reOrderBtn" unelevated flat>
+                  ReOrder
+                </q-btn>
+              </q-card-actions>
+            </q-card-section>
+
+          </q-card>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style lang="scss" src="./favorite.scss"></style>
+
+
+<script setup lang="ts">
+
+import { useAuthStore } from '~/stores/AuthStore';
+import { ref, onMounted } from 'vue';
+
+
+const { token, status: authStatus } = useAuth();
+const config = useRuntimeConfig();
+
+const favoriteData = ref([]);
+const productData = ref([]);
+
+
+const getUserProductFavorite = async () => {
+  try {
+    if (authStatus.value === "authenticated") {
+      const response = await $fetch(`${config.public.apiBase}/getFavorite`, {
+        headers: {
+          Authorization: token.value || null
+        }
+      });
+
+      favoriteData.value = response.data;
+    }
+  } catch (error) {
+    console.error('Error fetching user product favorites:', error);
+  }
+};
+
+
+
+
+
+
+
+
+onMounted(() => {
+  getUserProductFavorite();
+})
+
+
+</script>

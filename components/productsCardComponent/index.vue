@@ -116,7 +116,7 @@ const getUserProductFavorite = async () => {
             }
         });
 
-        const favoriteData = response.data.data;
+        const favoriteData = response.data;
 
         favoriteData.forEach((favorite) => {
             const product_id = favorite.product_id;
