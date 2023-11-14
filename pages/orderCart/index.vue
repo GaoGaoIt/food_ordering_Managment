@@ -83,7 +83,7 @@
                             </div>
                             <div class="tw-w-full tw-mt-12">
 
-                                <q-btn class=" tw-bg-green-700 tw-rounded-lg paymentBtn" unelevated>
+                                <q-btn to="/payment" class=" tw-bg-green-700 tw-rounded-lg paymentBtn" unelevated>
                                     <span>Continue To Payment</span>
                                     <q-icon name="trending_flat" />
                                 </q-btn>
