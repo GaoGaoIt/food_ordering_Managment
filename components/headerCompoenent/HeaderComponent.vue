@@ -28,6 +28,7 @@
     const handleNotificationClick = (notificationText) => {
       // Handle notification click, e.g., show a message or navigate to a notification page
       console.log(`Clicked on notification: ${notificationText}`);
+      
     };
     </script>
   
