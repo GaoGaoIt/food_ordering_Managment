@@ -55,12 +55,12 @@
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="/paymentHistory">
               <q-item-section>Payment History</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="/orderHistory">
               <q-item-section>Order History</q-item-section>
               <q-item-section side><q-icon name="chevron_right"></q-icon></q-item-section>
             </q-item>
